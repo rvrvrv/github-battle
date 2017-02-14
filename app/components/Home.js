@@ -3,7 +3,7 @@ var ReactRouter = require('react-router');
 var Link = ReactRouter.Link
 var MainContainer = require('./MainContainer');
 
-function Home () {
+function Home() {
   return (
     <MainContainer>
       <h1>GitHub Battle</h1>
