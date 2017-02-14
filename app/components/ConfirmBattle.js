@@ -7,11 +7,6 @@ var UserDetails = require('./UserDetails');
 var UserDetailsWrapper = require('./UserDetailsWrapper');
 var MainContainer = require('./MainContainer');
 
-
-function showIt(obj) {
-	return <pre>{JSON.stringify(obj, null, ' ')}</pre>
-}
-
 function ConfirmBattle(props) {
 	return props.isLoading === true
 		? <p>Loading!</p>
