@@ -17,6 +17,10 @@ function StartOver() {
 }
 
 function Results(props) {
+	if (props.isLoading === true) {
+		return <p>Loading...</p>;
+	}
+	
 	//Handle a tie
 	if (props.scores[0] === props.scores[1]) {
 		return (
