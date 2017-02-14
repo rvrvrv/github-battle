@@ -12,7 +12,10 @@ function Results(props) {
 			<h1>Results</h1>
 			<div className="col-sm-8 col-sm-offset-2">
 				<UserDetailsWrapper header='Winner'>
-				
+					<UserDetails score={props.scores[XX]} info={props.playersInfo[XX]} />
+				</UserDetailsWrapper>
+				<UserDetailsWrapper header='Loser'>
+					<UserDetails score={props.scores[XX]} info={props.playersInfo[XX]} />
 				</UserDetailsWrapper>
 			</div>
 		</div>
