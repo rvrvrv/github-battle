@@ -27,5 +27,6 @@
     "style-loader": "^0.13.1",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.3.0"
-  }
+  },
+	"postinstall": "webpack -p --config ./webpack.config.js --progress"
 }
