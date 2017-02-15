@@ -3,11 +3,11 @@ var axios = require('axios');
 var param = "?client_id=" + process.env.ID + "&client_secret=" + process.env.SEC;
 
 function getUserInfo(username) {
-	return axios.get(`https://api.github.com/users/${username}`);
+	return axios.get('https://api.github.com/users/' + username);
 }
 
 function getRepos(username) {
-	return axios.get(`https://api.github.com/users/${username}/repos${param}&per_page=100`);
+	return axios.get('https://api.github.com/users/' + username + '/repos' + param + '&per_page=100');
 }
 
 function getTotalStars(repos) {
