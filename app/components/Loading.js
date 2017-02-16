@@ -2,6 +2,7 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 var Reselect = require('./Reselect');
 
+
 var styles = {
 	container: {
 		margin: '0 auto',
@@ -10,17 +11,17 @@ var styles = {
 	},
 	content: {
 		textAlign: 'center',
-		marginTop: '30px'
+		marginTop: '30px',
 	},
 	info: {
+		padding: '0px 10px',
 		marginTop: '60px',
 		color: 'crimson',
 		fontWeight: 1000,
 		fontStyle: 'italic',
 		fontSize: '0.6em',
 		background: 'black',
-		opacity: 0,
-		transition: 'opacity 1s ease'
+		animation: 'fadeIn 4s',
 	}
 };
 
@@ -37,7 +38,6 @@ var Loading = React.createClass({
 	},
 	getInitialState: function() {
 		this.originalText = this.props.text;
-		styles.info.opacity = 0;
 		return {
 			text: this.originalText
 		}
@@ -55,9 +55,6 @@ var Loading = React.createClass({
 				});
 			}
 		}.bind(this), this.props.speed);
-		setTimeout(function() {
-			styles.info.opacity = 1;
-		}, 1200);
 	},
 	componentWillUnmount: function() {
 		clearInterval(this.interval);
@@ -66,10 +63,10 @@ var Loading = React.createClass({
 		return (
 			<div style={styles.container}>
 				<p style={styles.content}>{this.state.text}</p>
-				<p style={styles.info}>
-					<span>If this message remains, there has been an error retrieving user data.<br />Most likely scenario: GitHub user does not exist</span>
+				<div style={styles.info}>
+					<span>If this message remains, there has been an error retrieving user data.<br /><br />Most likely scenario: GitHub user does not exist.</span>
 					<Reselect />
-				</p>
+				</div>
 			</div>
 		);
 	}
