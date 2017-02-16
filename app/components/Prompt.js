@@ -13,7 +13,8 @@ function Prompt (props) {
               className="form-control"
               onChange={props.onUpdateUser}
               placeholder="Github Username"
-              type="text"
+              autoFocus
+	  			  type="text"
               value={props.username} />
           </div>
           <div className="form-group col-sm-4 col-sm-offset-4">
